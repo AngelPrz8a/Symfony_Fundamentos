@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+<div class="p-4 mb-4 bg-light rounded-3">
+    {{ form(form) }}
+</div>
+
+<div class="px-5 mb-4">
+    {% for comment in comments  %}
+        <div class="py-3 border-bottom">
+            {{ comment.body|markdown_to_html }}
+        </div>
+    {% endfor %}
+</div>
+
+{% endblock %}
